@@ -29,18 +29,66 @@ However, the remaining flip-flops should be made ready to toggle only when all l
 **Procedure**
 
 /* write all the steps invloved */
+1. Open Quartus Prime and create a New Project using the New Project Wizard.
+
+
+2. Create a Verilog/VHDL file and write the synchronous up–down counter code.
+
+
+3. Assign clock, reset, and up/down control inputs in the code.
+
+
+4. Set the file as Top-Level Entity and compile the design.
+
+
+5. Simulate using ModelSim to verify counting in up and down modes.
 
 **PROGRAM**
 
-/* Program for flipflops and verify its truth table in quartus using Verilog programming. 
+/* Program for flipflops and verify its truth table in quartus using Verilog programming.
+```
+UP COUNTER
+module up(out,clk,rst);
+input clk,rst;
+output reg [3:0]out;
+always @ (posedge clk)
+begin
+   if(rst)
+     out<=0;
+   else 
+     out <= out+1;
+end
+endmodule
 
-Developed by: RegisterNumber:
+DOWN COUNTER
+module down(out,clk,rst);
+input clk,rst;
+output reg [3:0]out;
+always @ (posedge clk)
+begin
+   if(rst)
+     out<=0;
+   else 
+     out <= out-1;
+end
+endmodule
+```
+
+Developed by: JESSIE J
+
+RegisterNumber: 25017372
 */
 
 **RTL LOGIC UP COUNTER**
+     <img width="1920" height="1080" alt="Screenshot 2025-12-15 135523" src="https://github.com/user-attachments/assets/e17e9b22-27b7-4a0c-8e59-9799d56366ea" />
+     <img width="1920" height="1080" alt="Screenshot 2025-12-15 140421" src="https://github.com/user-attachments/assets/223844b1-aebf-4898-a418-7350ab1dd9a9" />
 
 **TIMING DIAGRAM FOR IP COUNTER**
+     <img width="1920" height="1080" alt="Screenshot 2025-12-15 135714" src="https://github.com/user-attachments/assets/0540148b-58ec-4ce7-8945-6afd715e0c5c" />
+     <img width="1920" height="1080" alt="Screenshot 2025-12-15 140706" src="https://github.com/user-attachments/assets/ba961dd2-86ef-44be-ac97-6556e64223df" />
 
-**TRUTH TABLE**
+
 
 **RESULTS**
+
+   Thus,To implement 4 bit synchronous up counter and validate functionality is verified.
